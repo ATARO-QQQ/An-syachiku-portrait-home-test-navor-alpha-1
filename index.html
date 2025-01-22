@@ -206,7 +206,67 @@
             font-size: 1rem;
         }
 
-        /* 新しい記事のマス */
+        .main-content .featured-article {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 16.666%; /* 6:1 アスペクト比 (100 / 6 = 16.666) */
+            overflow: hidden;
+            margin-bottom: 20px;
+            background-image: url('適当画像 2025 01 23.png'); /* 背景画像を指定 */
+            background-size: cover; /* 画像が要素全体に広がる */
+            background-position: center; /* 画像が中央に配置される */
+            background-repeat: no-repeat; /* 繰り返しなし */
+            margin-left: 0; /* 左端にぴったり配置 */
+            margin-right: 0; /* 右端にぴったり配置 */
+        }
+
+        .main-content .featured-article img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-content .featured-article .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7), 
+                         -3px -3px 5px rgba(0, 0, 0, 0.7), 
+                         3px -3px 5px rgba(0, 0, 0, 0.7), 
+                         -3px 3px 5px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            white-space: nowrap; /* テキストが改行されないようにする */
+        }
+
+        @media (max-width: 768px) {
+            .main-content .featured-article {
+                padding-top: 16.666%; /* 6:1 アスペクト比 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-content .featured-article {
+                padding-top: 50%; /* 2:1 アスペクト比 */
+            }
+
+            .main-content .featured-article .title {
+                font-size: 2rem; /* 縦画面で文字サイズを調整 */
+            }
+
+            .main-content {
+                font-size: 0.9rem;
+            }
+        }
+
+                /* 新しい記事のマス */
         .article-box {
             display: flex;
             flex-wrap: wrap;
@@ -271,6 +331,7 @@
                 width: 23%; /* 高解像度デバイスでも4個並べる */
             }
         }
+
 
         /* フッター */
         footer {
@@ -382,31 +443,28 @@
     <div class="main-content">
         <h1><center>ナマイキデザインへようこそ</center></h1>
         <p>&emsp;徒然なるままに何となく書いている個人サイトです。基本的にブログみたいなものですので、「ふーん」と軽く覗くのがちょうどいいと思います。着の身着のまま、気になったことはやる気次第で色々やりますので、なにとぞよろしくお願いします。<br>
-        </p>
-
-        <!-- 新しい記事セクション -->
+            </p>
         <div class="featured-article">
             <div class="title">新しい記事</div>
         </div>
-
-        <div class="article-box">
+                <div class="article-box">
             <div class="box">
-                <img src="適当画像 2025 01 25.png" alt="記事画像1">
+                <img src="適当画像 2025 01 24.png" alt="記事画像1">
                 <div class="title">推し活は超合理的!?</div>
                 <div class="summary">推し活って最近話題ですが、どうなんでしょうねぇ…</div>
             </div>
             <div class="box">
-                <img src="適当画像 2025 01 24.png" alt="記事画像2">
+                <img src="適当画像 2025 01 25.png" alt="記事画像2">
                 <div class="title">結局、和平はできるか</div>
                 <div class="summary">人類は戦う生き物なんですかね</div>
             </div>
             <div class="box">
-                <img src="適当画像 2025 01 25.png" alt="記事画像3">
+                <img src="適当画像 2025 01 24.png" alt="記事画像3">
                 <div class="title">気持ち悪いは正義か</div>
                 <div class="summary">好奇心は猫をも殺すっていうくらい…</div>
             </div>
             <div class="box">
-                <img src="適当画像 2025 01 24.png" alt="記事画像4">
+                <img src="適当画像 2025 01 25.png" alt="記事画像4">
                 <div class="title">まずいですよ…</div>
                 <div class="summary">進捗ーーーーーーー!!!!!</div>
             </div>
