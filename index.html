@@ -266,7 +266,7 @@
             }
         }
 
-                /* 新しい記事のマス */
+        /* 新しい記事のマス */
         .article-box {
             display: flex;
             flex-wrap: wrap;
@@ -284,6 +284,12 @@
             margin-bottom: 20px;
             box-sizing: border-box;
             aspect-ratio: 3 / 4; /* 3:4のアスペクト比 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を追加 */
+            transition: box-shadow 0.3s ease; /* 影のスムーズな変化 */
+        }
+
+        .article-box .box:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
         }
 
         .article-box .box img {
@@ -307,6 +313,15 @@
             padding: 10px;
             font-size: 1rem;
             text-align: center;
+            padding-bottom: 40px; /* 黒い部分が下までぴったり */
+        }
+
+        .article-box .box .date {
+            text-align: center;
+            background-color: #2a2a2a;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.9rem;
         }
 
         .article-box .box .title + .summary {
@@ -399,90 +414,87 @@
 
         /* 高解像度デバイス */
         @media (min-width: 1201px) {
-            header nav a {
-                padding: 20px;
-            }
-
-            .carousel button {
-                padding: 20px;
+            .carousel-images img {
+                aspect-ratio: 16 / 9; /* 大きい画像に合わせて */
             }
 
             .main-content {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <a href="https://ataro-qqq.github.io/An-syachiku-portrait-home-test-casten-alpha-1/"><img src="ナマイキデザイン ロゴ 2024 11 26 01 - コピー.png" alt="ナマイキデザイン"></a>
-        <button class="menu-toggle"><span>☰</span></button>
-        <nav>
-            <a href="#">最新の記事</a>
-            <a href="#">今までの記事</a>
-            <a href="#">お知らせ</a>
-            <a href="#">製作者より</a>
-        </nav>
-    </div>
-</header>
-
-<div class="carousel">
-    <div class="carousel-images">
-        <a href="#"><img src="スライド1.PNG" alt="スライド1"></a>
-        <a href="#"><img src="スライド2.PNG" alt="スライド2"></a>
-        <a href="#"><img src="スライド1.PNG" alt="スライド3"></a>
-        <a href="#"><img src="スライド3.PNG" alt="スライド4"></a>
-    </div>
-    <button class="prev">←</button>
-    <button class="next">→</button>
-</div>
-
-<main>
-    <div class="main-content">
-        <h1><center>ナマイキデザインへようこそ</center></h1>
-        <p>&emsp;徒然なるままに何となく書いている個人サイトです。基本的にブログみたいなものですので、「ふーん」と軽く覗くのがちょうどいいと思います。着の身着のまま、気になったことはやる気次第で色々やりますので、なにとぞよろしくお願いします。<br>
-            </p>
-        <div class="featured-article">
-            <div class="title">新しい記事</div>
+    <header>
+        <div class="container">
+            <img src="ナマイキデザイン ロゴ 2025 01 17.png" alt="ナマイキデザイン ロゴ">
+            <nav>
+                <a href="#">ホーム</a>
+                <a href="#">記事一覧</a>
+                <a href="#">ギャラリー</a>
+                <a href="#">お問い合わせ</a>
+            </nav>
+            <button class="menu-toggle">
+                <span>☰</span>
+            </button>
         </div>
-                <div class="article-box">
-            <div class="box">
-                <img src="適当画像 2025 01 24.png" alt="記事画像1">
-                <div class="title">推し活は超合理的!?</div>
-                <div class="summary">推し活って最近話題ですが、どうなんでしょうねぇ…</div>
-            </div>
-            <div class="box">
-                <img src="適当画像 2025 01 25.png" alt="記事画像2">
-                <div class="title">結局、和平はできるか</div>
-                <div class="summary">人類は戦う生き物なんですかね</div>
-            </div>
-            <div class="box">
-                <img src="適当画像 2025 01 24.png" alt="記事画像3">
-                <div class="title">気持ち悪いは正義か</div>
-                <div class="summary">好奇心は猫をも殺すっていうくらい…</div>
-            </div>
-            <div class="box">
-                <img src="適当画像 2025 01 25.png" alt="記事画像4">
-                <div class="title">まずいですよ…</div>
-                <div class="summary">進捗ーーーーーーー!!!!!</div>
-            </div>
+    </header>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <a href="#"><img src="画像1.jpg" alt="画像1"></a>
+            <a href="#"><img src="画像2.jpg" alt="画像2"></a>
+            <a href="#"><img src="画像3.jpg" alt="画像3"></a>
         </div>
+        <button class="prev">←</button>
+        <button class="next">→</button>
     </div>
-</main>
 
-<footer>
-    <p>閲覧回数: <span id="page-views">0</span></p>
-    <p>現在時刻: <span id="current-time">--:--:--</span></p>
-    <div class="footer-menu">
-        <a href="#">最新の記事</a>
-        <a href="#">今までの記事</a>
-        <a href="#">お知らせ</a>
-    </div>
-    <p>&copy; 2024 An's-Syachiku D</p>
-</footer>
+    <main>
+        <div class="main-content">
+            <section class="featured-article">
+                <div class="title">注目記事</div>
+            </section>
 
+            <section class="article-box">
+                <div class="box">
+                    <img src="記事画像1.jpg" alt="記事画像1">
+                    <div class="title">記事タイトル1</div>
+                    <div class="summary">記事の概要です。記事の内容が少し紹介されます。</div>
+                    <div class="date">2025年1月22日</div>
+                </div>
+                <div class="box">
+                    <img src="記事画像2.jpg" alt="記事画像2">
+                    <div class="title">記事タイトル2</div>
+                    <div class="summary">記事の概要です。記事の内容が少し紹介されます。</div>
+                    <div class="date">2025年1月21日</div>
+                </div>
+                <div class="box">
+                    <img src="記事画像3.jpg" alt="記事画像3">
+                    <div class="title">記事タイトル3</div>
+                    <div class="summary">記事の概要です。記事の内容が少し紹介されます。</div>
+                    <div class="date">2025年1月20日</div>
+                </div>
+                <div class="box">
+                    <img src="記事画像4.jpg" alt="記事画像4">
+                    <div class="title">記事タイトル4</div>
+                    <div class="summary">記事の概要です。記事の内容が少し紹介されます。</div>
+                    <div class="date">2025年1月19日</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-menu">
+            <a href="#">プライバシーポリシー</a>
+            <a href="#">利用規約</a>
+            <a href="#">サイトマップ</a>
+        </div>
+        <p>&copy; 2025 ナマイキデザイン</p>
+    </footer>
+    
 <script>
     // 閲覧回数のカウント
     let pageViewCount = localStorage.getItem('pageViewCount') || 0;
